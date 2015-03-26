@@ -1,18 +1,27 @@
 ---
 layout: page
-title: Lesson Title
+title: Working with Library Data
 ---
-Paragraph of introductory material.
+Libraries are home to a variety of data in metadata in a panoply of different formats.
 
-> ## Prerequisites {.prereq}
+
+> ## Prerequisites
 >
-> A short paragraph describing what learners need to know
-> before tackling this lesson.
+> Learners should have completed introductory lessons on:
+>
+> *   the Unix shell (...)
+> *   Git (...)
+> *   Python (...)
+>
+> Some familiarity with library metadata wouldn't hurt either.
+
+
 
 ## Topics
 
-1.  [Topic Title One](01-one.html)
-2.  [Topic Title Two](02-two.html)
+1.  [Introduction](01-intro.html)
+2.  [MARC Records](02-marc.html)
+3.  TBD
 
 ## Other Resources
 

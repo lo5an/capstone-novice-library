@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="generator" content="pandoc">
-    <title>Software Carpentry: Lesson Title</title>
+    <title>Software Carpentry: Working With Library Data</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
@@ -25,48 +25,36 @@
       </div>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <h1 class="title">Lesson Title</h1>
-          <h2 class="subtitle">Topic Title One</h2>
+          <h1 class="title">Working With Library Data</h1>
+          <h2 class="subtitle">MARC Records</h2>
 <div id="learning-objectives" class="objectives panel panel-warning">
 <div class="panel-heading">
 <h2 id="learning-objectives" class="objectives panel panel-warning"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
-<li>Learning objective 1</li>
-<li>Learning objective 2</li>
+<li>Find and evaluate specialized Python libraries</li>
+<li>Read and display MARC records</li>
+<li>Modify and save MARC records</li>
 </ul>
 </div>
 </div>
-<p>Paragraphs of text --- possibly including <a href="reference.html#key-word-1">key word 1</a> --- mixed with:</p>
-<pre class="sourceCode python"><code class="sourceCode python">some code:
-    to be displayed</code></pre>
-<pre class="output"><code>output
-from
-program</code></pre>
-<pre class="error"><code>error reports from program (if any)</code></pre>
-<p>and possibly including:</p>
-<div id="callout-box" class="callout panel panel-info">
-<div class="panel-heading">
-<h2 id="callout-box" class="callout panel panel-info"><span class="glyphicon glyphicon-pushpin"></span>Callout Box</h2>
-</div>
-<div class="panel-body">
-<p>An aside of some kind.</p>
-</div>
-</div>
-<p>or an image from the <code>figs</code> directory:</p>
-<div class="figure">
-<img src="fig/example.svg" title="this is the image&#39;s alt text" alt="this is the image&#39;s title" />
-<p class="caption">this is the image's title</p>
-</div>
-<div id="challenge-title" class="challenge panel panel-success">
-<div class="panel-heading">
-<h2 id="challenge-title" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>Challenge Title</h2>
-</div>
-<div class="panel-body">
-<p>Description of a single challenge. There may be several challenges.</p>
-</div>
-</div>
+<h2 id="quest-for-a-marc-library">Quest for a MARC library</h2>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">pip</span> install pymarc</code></pre>
+<h2 id="displaying-some-book-data">Displaying some book data</h2>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Print a list of titles from a MARC record</span>
+<span class="ch">from</span> pymarc <span class="ch">import</span> MARCReader
+<span class="kw">with</span> <span class="dt">open</span>(<span class="st">&#39;./data/marc.dat&#39;</span>, <span class="st">&#39;rb&#39;</span>) <span class="ch">as</span> marcfile:
+    reader = MARCReader(marcfile)
+    <span class="kw">for</span> record in reader:
+        <span class="dt">print</span>(record[<span class="st">&#39;245&#39;</span>][<span class="st">&#39;a&#39;</span>])</code></pre>
+<h2 id="updating-our-records">Updating our records</h2>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> pymarc <span class="ch">import</span> MARCReader
+<span class="kw">with</span> <span class="dt">open</span>(<span class="st">&#39;./data/marc.dat&#39;</span>,<span class="st">&#39;rb&#39;</span>) <span class="ch">as</span> marcin, <span class="dt">open</span>(<span class="st">&#39;./data/newmarc.dat&#39;</span>, <span class="st">&#39;wb&#39;</span>) <span class="ch">as</span> marcout:
+    reader = MARCReader(marcin)
+    <span class="kw">for</span> record in reader:
+        record.add_field(Field()) <span class="co">#TODO: need to actually add content</span>
+        out.write(record.as_marc())</code></pre>
         </div>
       </div>
       <div class="footer">
