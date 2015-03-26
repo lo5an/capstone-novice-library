@@ -2,7 +2,11 @@
 layout: page
 title: Working with Library Data
 ---
-Libraries are home to a variety of data in metadata in a panoply of different formats.
+
+## NOTE: this is a work in progress
+
+The tools presented by Software Carpentry can be a powerful way to interact with the panoply of data and metadata formats that circulate in libraries.
+
 
 
 > ## Prerequisites
