@@ -10,7 +10,7 @@ minutes: 10
 > * Read and display MARC records
 > * Modify and save MARC records
 
-## The quest for a MARC tool
+## Looking for a MARC tool
 
 Lots of library metadata lives in MARC records, which is a pretty
 complicated data format to parse, so a good starting point for working
@@ -69,7 +69,7 @@ with open('./data/marc.dat','rb') as marcin, open('./data/newmarc.dat', 'wb') as
 
 
 > ## MARC Summary {.challenge}
-
+>
 > Write a function that takes a file name as an argument and prints
 > out a numbered list of title, author, and publication date for each
 > record.
