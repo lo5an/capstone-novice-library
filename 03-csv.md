@@ -1,36 +1,34 @@
 ---
 layout: page
-title: Lesson Title
-subtitle: Topic Title Two
+title: Working with Library Data
+subtitle: CSV Files
 minutes: 10
 ---
 > ## Learning Objectives {.objectives}
 >
-> * Learning objective 1
-> * Learning objective 2
+> * Explain why we might want to use a library when working with even
+>   a fairly simple format like CSV.
+> * Use the csv module in the Python Standard Library to read and write
+>   CSVs
 
-Paragraphs of text
---- possibly including [key word 2](reference.html#key-word-2) ---
-mixed with:
+
+[CSV](http://en.wikipedia.org/wiki/Comma-separated_values) is a
+least-common-denominator file format for tabular data that can be
+imported and/or exported by many systems. The basic dea is simple:
+rows of fields seperated by commas; but there is no official standard
+specifying exactly it should be implemented, and there are many
+possibly variants and gotchas.
+
+Handily, Python includes a nice module for reading and writing from
+CSV files. Unsurprisingly, it's called
+[csv](https://docs.python.org/2/library/csv.html).
+
+
+
+
 
 ~~~ {.python}
-some code:
-    to be displayed
 ~~~
-~~~ {.output}
-output
-from
-program
-~~~
-~~~ {.error}
-error reports from program (if any)
-~~~
-
-and possibly including:
-
-> ## Callout Box {.callout}
->
-> An aside of some kind.
 
 > ## Challenge Title {.challenge}
 >
