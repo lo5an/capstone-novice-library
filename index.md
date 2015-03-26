@@ -21,7 +21,8 @@ Libraries are home to a variety of data in metadata in a panoply of different fo
 
 1.  [Introduction](01-intro.html)
 2.  [MARC Records](02-marc.html)
-3.  TBD
+3.  [CSV Files](03-csv.html)
+4.  TBD
 
 ## Other Resources
 
