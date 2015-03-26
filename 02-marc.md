@@ -70,8 +70,8 @@ with open('./data/marc.dat','rb') as marcin, open('./data/newmarc.dat', 'wb') as
 
 > ## MARC Summary {.challenge}
 >
-> Write a function that takes a file name as an argument and prints
-> out a numbered list of title, author, and publication date for each
-> record.
+> Write a python script that takes a file name as an argument and
+> prints out a numbered list of title, author, and publication date
+> for each record.
 
 
