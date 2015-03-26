@@ -11,7 +11,7 @@ minutes: 10
 > * Modify and save MARC records
 
 
-## Quest for a MARC library
+## The quest for a MARC tool
 
 ~~~{.bash}
 pip install pymarc
