@@ -40,21 +40,39 @@
 </div>
 </div>
 <h2 id="the-quest-for-a-marc-tool">The quest for a MARC tool</h2>
+<p>Lots of library metadata lives in MARC records, which is a pretty complicated data format to parse, so a good starting point for working with MARC is looking for a Python library that can do the heavy lifting for us.</p>
+<p>A quick look through the <a
+href="https://docs.python.org/2/library/index.html">Python Standard Library</a> doesn't turn up anything, but a search for &quot;python marc&quot; leads us to <a href="https://github.com/edsu/pymarc">pymarc</a> by Ed Summers.</p>
+<p>Looking around the GitHub repository, we can see that pymarc: * has been updated recently * seems to be in regular use by many people * has pretty good documentation * installs simply, and without difficut dependencies</p>
+<p>The recommended installtion method uses pip, which is now the default package manager for python.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">pip</span> install pymarc</code></pre>
-<h2 id="displaying-some-book-data">Displaying some book data</h2>
+<h2 id="displaying-book-info">Displaying book info</h2>
+<p>Now that we've got a tool for handling MARC, let's test it by displaying some book information. We'll begin by printing out the title field for all of the records in a MARC file.</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Print a list of titles from a MARC record</span>
 <span class="ch">from</span> pymarc <span class="ch">import</span> MARCReader
 <span class="kw">with</span> <span class="dt">open</span>(<span class="st">&#39;./data/marc.dat&#39;</span>, <span class="st">&#39;rb&#39;</span>) <span class="ch">as</span> marcfile:
     reader = MARCReader(marcfile)
     <span class="kw">for</span> record in reader:
         <span class="dt">print</span>(record[<span class="st">&#39;245&#39;</span>][<span class="st">&#39;a&#39;</span>])</code></pre>
-<h2 id="updating-our-records">Updating our records</h2>
+<h2 id="updating-records">Updating records</h2>
+<p>Reading information from MARC is nice, but we also need to be able to update and save records, so let's try that next.</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> pymarc <span class="ch">import</span> MARCReader
 <span class="kw">with</span> <span class="dt">open</span>(<span class="st">&#39;./data/marc.dat&#39;</span>,<span class="st">&#39;rb&#39;</span>) <span class="ch">as</span> marcin, <span class="dt">open</span>(<span class="st">&#39;./data/newmarc.dat&#39;</span>, <span class="st">&#39;wb&#39;</span>) <span class="ch">as</span> marcout:
     reader = MARCReader(marcin)
     <span class="kw">for</span> record in reader:
         record.add_field(Field()) <span class="co">#TODO: need to actually add content</span>
         out.write(record.as_marc())</code></pre>
+<div id="marc-summary" class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="marc-summary" class="challenge panel panel-success"><span class="glyphicon glyphicon-pencil"></span>MARC Summary</h2>
+</div>
+<div class="panel-body">
+
+</div>
+</div>
+<blockquote>
+<p>Write a function that takes a file name as an argument and prints out a numbered list of title, author, and publication date for each record.</p>
+</blockquote>
         </div>
       </div>
       <div class="footer">
